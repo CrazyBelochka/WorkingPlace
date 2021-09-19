@@ -1,0 +1,5 @@
+﻿  main.cpp
+c:\users\rkusu\source\repos\vm_1\vm_1\main.cpp(72): warning C4101: 'x1': unreferenced local variable
+c:\users\rkusu\source\repos\vm_1\vm_1\main.cpp(72): warning C4101: 'r': unreferenced local variable
+c:\users\rkusu\source\repos\vm_1\vm_1\main.cpp(72): warning C4101: 'x2': unreferenced local variable
+  VM_1.vcxproj -> C:\Users\rkusu\source\repos\VM_1\Debug\VM_1.exe
