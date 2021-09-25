@@ -14,10 +14,6 @@ double dfdf(double x) //вторая производная
 {
 	return pow(2.0, x) * log(2.0) - 10;
 }
-double g(double x)
-{
-	return x + 0.5 * f(x);
-}
 double equivalent(double x) {
 	return (x - (1 / df(x)) * f(x));
 }
@@ -29,7 +25,6 @@ int metodNewton()
 	i = 0;
 	cout << "Please input [a;b]\n";
 	cin >> a >> b; // вводим границы отрезка, на котором будем искать корень
-	for (eps = 0.001; eps <= 0.1;) {
 		cout << "\nCurrent epsilon: " << eps << endl;
 		if (f(a) * dfdf(a) > 0) x0 = a; // для выбора начальной точки проверяем f(x0)*dfdf(x0) > 0 ?
 		else x0 = b;
@@ -43,8 +38,6 @@ int metodNewton()
 		}
 		cout << "Answer = " << xn << endl; // вывод вычисленного корня
 		i = 0;
-		eps = eps * 10;
-	}
 	return 0;
 }
 int metodIT()
@@ -52,19 +45,17 @@ int metodIT()
 	double x, s;
 	int i = 0;
 	double eps;
+	eps = 0.000001;
 	cout << "Enter initial root value : "; cin >> x;
 	s = x;
-	for (eps = 0.001; eps <= 0.1;) {
-		x = s;
-		cout << "\nCurrent epsilon: " << setprecision(0) << eps << endl;
-		for (double iter = 1; eps < fabs(f(x)); iter = iter + 1)
+		do
 		{
-			x = equivalent(x);
-			cout << ++i << "-th iteration = " << x << "\n";
+				x = equivalent(x);
+				s = fabs(f(x));
+				cout << ++i << "-th iteration = " << x << "\n";
 		}
-		eps = eps * 10;
+		while (fabs(f(x) < eps));
 		i = 0;
-	}
 	return 0;
 }
 int methodSEC()
@@ -73,20 +64,19 @@ int methodSEC()
 	int i = 0;
 	cout << "Please input [a;b]\n";
 	cin >> a >> b;
-	for (eps = 0.001; eps <= 0.1; eps = eps * 10) {
-		if (f(a) * dfdf(a) > 0) x0 = a; // для выбора начальной точки проверяем f(x0)*dfdf(x0) > 0 ?
-		else x0 = b;
-		cout << "\nCurrent epsilon: " << eps << endl;
-		xn = x0 - f(x0) / df(x0); // считаем первое приближение
+	eps = 0.001;
+	if (f(a) * dfdf(a) > 0)
+		x0 = a; // для выбора начальной точки проверяем f(x0)*dfdf(x0) > 0 ?
+	else
+		x0 = b;
+	xn = x0 - f(x0) / df(x0); // считаем первое приближение
+	cout << ++i << "-th iteration = " << xn << "\n";
+	do {
+		xn1 = xn - (((xn - x0) * f(xn)) / (f(xn) - f(x0)));
+		x0 = xn;
+		xn = xn1;
 		cout << ++i << "-th iteration = " << xn << "\n";
-		do {
-			xn1 = xn - (((xn - x0) * f(xn)) / (f(xn) - f(x0)));
-			x0 = xn;
-			xn = xn1;
-			cout << ++i << "-th iteration = " << xn << "\n";
-		} while ((fabs(f(xn - x0) >= eps) && (i < 6)));
-		i = 0;
-	}
+	} while (fabs(xn - x0) > eps);
 	return 0;
 }
 int main()

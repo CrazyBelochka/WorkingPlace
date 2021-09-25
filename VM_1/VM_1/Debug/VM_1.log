@@ -1,5 +1,5 @@
 ﻿  main.cpp
-c:\users\rkusu\source\repos\vm_1\vm_1\main.cpp(72): warning C4101: 'x1': unreferenced local variable
-c:\users\rkusu\source\repos\vm_1\vm_1\main.cpp(72): warning C4101: 'r': unreferenced local variable
-c:\users\rkusu\source\repos\vm_1\vm_1\main.cpp(72): warning C4101: 'x2': unreferenced local variable
-  VM_1.vcxproj -> C:\Users\rkusu\source\repos\VM_1\Debug\VM_1.exe
+C:\Users\Роман\GitHub\WorkingPlace\VM_1\VM_1\main.cpp(63,13): warning C4101: x1: неиспользованная локальная переменная
+C:\Users\Роман\GitHub\WorkingPlace\VM_1\VM_1\main.cpp(63,36): warning C4101: r: неиспользованная локальная переменная
+C:\Users\Роман\GitHub\WorkingPlace\VM_1\VM_1\main.cpp(63,17): warning C4101: x2: неиспользованная локальная переменная
+  VM_1.vcxproj -> C:\Users\Роман\GitHub\WorkingPlace\VM_1\Debug\VM_1.exe
