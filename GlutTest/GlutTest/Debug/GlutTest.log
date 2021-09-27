@@ -1,0 +1,5 @@
+﻿  main.cpp
+c:\users\rkusu\source\repos\gluttest\gluttest\main.cpp(32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\rkusu\source\repos\gluttest\gluttest\main.cpp(49): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\rkusu\source\repos\gluttest\gluttest\main.cpp(79): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  GlutTest.vcxproj -> C:\Users\rkusu\source\repos\GlutTest\Debug\GlutTest.exe
