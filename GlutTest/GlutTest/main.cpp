@@ -1,17 +1,9 @@
 #include <windows.h>
 
 #include <GL/gl.h>
-
 #include <GL/glu.h>
-
-
 #include <GL/glut.h>
 
-void resize(int width, int height)
-
-{
-
-}
 
 void display(void)
 
@@ -78,7 +70,7 @@ void display(void)
 
 	glLineWidth(0.4);
 	glBegin(GL_LINES); //правый верхний квадрат
-										//3 квадратика
+										//4 квадратика
 	glColor3d(1, 1, 1);
 	glVertex3d(0.3, 6, 0);
 	glVertex3d(0.3, 2, 0);
@@ -102,8 +94,6 @@ void display(void)
 	glVertex3d(1.3, 2, 0);
 	glEnd();
 
-	//glEnable(GL_LINE_STIPPLE);
-	//glEnable(GL_LINE_SMOOTH);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	glBegin(GL_TRIANGLE_FAN);//веер цветов
 	glColor3d(1, 0, 0);
@@ -121,8 +111,6 @@ void display(void)
 	glColor3d(1, 0, 1);
 	glVertex3d(3, 5.3, 0);
 	glEnd();
-	//glDisable(GL_LINE_SMOOTH);
-	//glDisable(GL_LINE_STIPPLE);
 
 	glPointSize(7);
 	glEnable(GL_POINT_SMOOTH); //желтая точка снизу слева
@@ -164,9 +152,9 @@ void display(void)
 
 	glEnd();
 
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // см. выше
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // см. выше
 	glBegin(GL_TRIANGLES);
-	glColor3d(0, 1, 0); // рисуем треугольник
+	glColor3d(0, 0, 1); // рисуем треугольник
 	glVertex3d(3, 0, 0);
 	glVertex3d(4, 0.8, 0);
 	glVertex3d(4.2,-0.3 , 0);
@@ -180,7 +168,15 @@ void display(void)
 	glVertex3d(3.5, -3, 0);
 	glEnd();
 
+	glColor3d(1, 1, 1);
+	glRasterPos2d(-5, 1.06);
 
+	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, 65);
+	glutBitmapCharacter(GLUT_BITMAP_9_BY_15, 80);
+	glutBitmapCharacter(GLUT_BITMAP_9_BY_15, 45);
+	glutBitmapCharacter(GLUT_BITMAP_9_BY_15, 48);
+	glutBitmapCharacter(GLUT_BITMAP_9_BY_15, 50);
+	glutBitmapCharacter(GLUT_BITMAP_9_BY_15, 54);
 
 
 
@@ -224,12 +220,10 @@ int main(int argc, char ** argv)
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
 
 	glutInitWindowPosition(50, 10);
+	glViewport(0, 0, 700, 700);
+	glutInitWindowSize(700, 700);
 
-	glutInitWindowSize(1000, 1000);
-
-	glutCreateWindow("Hello");
-
-	glutReshapeFunc(resize);
+	glutCreateWindow("World of lines");
 
 	init();
 
