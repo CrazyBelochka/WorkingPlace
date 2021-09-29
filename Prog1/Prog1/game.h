@@ -16,12 +16,6 @@ using namespace std;
 class Game
 {
 public:
-	char place[ARRAY_LENGTH][ARRAY_HEIGHT] = { ' ' };
-	int amount_moves = 0;
-	string name;
-	int NumberVariations[NUMBER_OF_FIELDS] = { 0 };
-	int number;
-	int checkermoves = 0;
 	
 	int WinCheck(int NumberVariations[NUMBER_OF_FIELDS])
 	{
@@ -192,7 +186,7 @@ public:
 		}
 	}
 
-	int MakeMoveCleverGamer(int amount_moves, int NumberVariations[NUMBER_OF_FIELDS])
+	int MakeMoveCleverGamer(int amount_moves, int NumberVariations[NUMBER_OF_FIELDS], char place[ARRAY_LENGTH][ARRAY_HEIGHT])
 	{
 		if (amount_moves % 2 == 0)
 		{
@@ -875,6 +869,13 @@ public:
 
 		return(0);
 	}
+
+	char place[ARRAY_LENGTH][ARRAY_HEIGHT] = { ' ' };
+	int amount_moves = 0;
+	string name;
+	int NumberVariations[NUMBER_OF_FIELDS] = { 0 };
+	int number;
+	int checkermoves = 0;
 
 private:
 };

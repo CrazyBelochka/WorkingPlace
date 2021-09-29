@@ -84,9 +84,12 @@ int FindAndMakePossibleMoves(int amount_moves, int NumberVariations[NUMBER_OF_FI
 {
 	int reload = 0;
 	int number = 0;
+	int check = 0;
+
 	if (amount_moves == 0)
 	{
 		cout << "Выберите куда нарисовать крестик:" << endl;
+		cout << "0.Программа сама сделает ход" << endl;
 		cout << "1.Левый верхний угол " << endl;
 		cout << "2.Центральный верхний квадрат " << endl;
 		cout << "3.Правый верхний угол " << endl;
@@ -97,116 +100,42 @@ int FindAndMakePossibleMoves(int amount_moves, int NumberVariations[NUMBER_OF_FI
 		cout << "8.Центральный нижний квадрат " << endl;
 		cout << "9.Правый нижний угол " << endl;
 		cin >> number;
-		NumberVariations[number - 1] = 1;
-		switch (number)
+		if (number == 0)
 		{
-		case 1:
-			play.DrawCross(place, 12, 4);
+			check = play.MakeMoveCleverGamer(amount_moves, NumberVariations, place);
 			return(1);
-		case 2:
-			play.DrawCross(place, 35, 4);
-			return(1);
-		case 3:
-			play.DrawCross(place, 58, 4);
-			return(1);
-		case 4:
-			play.DrawCross(place, 12, 12);
-			return(1);
-		case 5:
-			play.DrawCross(place, 35, 12);
-			return(1);
-		case 6:
-			play.DrawCross(place, 58, 12);
-			return(1);
-		case 7:
-			play.DrawCross(place, 12, 20);
-			return(1);
-		case 8:
-			play.DrawCross(place, 35, 20);
-			return(1);
-		case 9:
-			play.DrawCross(place, 58, 20);
-			return(1);
-
-		default:
-			return(0);
-		}
-	}
-	if ((amount_moves != 0) && (amount_moves % 2 == 1))
-	{
-		cout << "Куда поставить нолик: " << endl;
-		if (NumberVariations[0] == 0)
-		{
-			cout << "1.Левый верхний угол " << endl;
-		}
-		if (NumberVariations[1] == 0)
-		{
-			cout << "2.Центральный верхний квадрат " << endl;
-		}
-		if (NumberVariations[2] == 0)
-		{
-			cout << "3.Правый верхний угол " << endl;
-		}
-		if (NumberVariations[3] == 0)
-		{
-			cout << "4.Левый центральный квадрат " << endl;
-		}
-		if (NumberVariations[4] == 0)
-		{
-			cout << "5.Центральный квадрат " << endl;
-		}
-		if (NumberVariations[5] == 0)
-		{
-			cout << "6.Правый центральный квадрат " << endl;
-		}
-		if (NumberVariations[6] == 0)
-		{
-			cout << "7.Левый нижний угол " << endl;
-		}
-		if (NumberVariations[7] == 0)
-		{
-			cout << "8.Центральный нижний квадрат " << endl;
-		}
-		if (NumberVariations[8] == 0)
-		{
-			cout << "9.Правый нижний угол " << endl;
-		}
-		cin >> number;
-		if (NumberVariations[number - 1] != 0)
-		{
-			reload = FindAndMakePossibleMoves(amount_moves, NumberVariations, play, place);
 		}
 		else
 		{
-			NumberVariations[number - 1] = 2;
+			NumberVariations[number - 1] = 1;
 			switch (number)
 			{
 			case 1:
-				play.DrawCircle(place, 12, 4);
+				play.DrawCross(place, 12, 4);
 				return(1);
 			case 2:
-				play.DrawCircle(place, 35, 4);
+				play.DrawCross(place, 35, 4);
 				return(1);
 			case 3:
-				play.DrawCircle(place, 58, 4);
+				play.DrawCross(place, 58, 4);
 				return(1);
 			case 4:
-				play.DrawCircle(place, 12, 12);
+				play.DrawCross(place, 12, 12);
 				return(1);
 			case 5:
-				play.DrawCircle(place, 35, 12);
+				play.DrawCross(place, 35, 12);
 				return(1);
 			case 6:
-				play.DrawCircle(place, 58, 12);
+				play.DrawCross(place, 58, 12);
 				return(1);
 			case 7:
-				play.DrawCircle(place, 12, 20);
+				play.DrawCross(place, 12, 20);
 				return(1);
 			case 8:
-				play.DrawCircle(place, 35, 20);
+				play.DrawCross(place, 35, 20);
 				return(1);
 			case 9:
-				play.DrawCircle(place, 58, 20);
+				play.DrawCross(place, 58, 20);
 				return(1);
 
 			default:
@@ -214,9 +143,10 @@ int FindAndMakePossibleMoves(int amount_moves, int NumberVariations[NUMBER_OF_FI
 			}
 		}
 	}
-	if ((amount_moves != 0) && (amount_moves % 2 == 0))
+	if ((amount_moves != 0) && (amount_moves % 2 == 1))
 	{
-		cout << "Куда поставить крест: " << endl;
+		cout << "Куда поставить нолик: " << endl;
+		cout << "0.Программа сама сделает ход" << endl;
 		if (NumberVariations[0] == 0)
 		{
 			cout << "1.Левый верхний угол " << endl;
@@ -254,46 +184,148 @@ int FindAndMakePossibleMoves(int amount_moves, int NumberVariations[NUMBER_OF_FI
 			cout << "9.Правый нижний угол " << endl;
 		}
 		cin >> number;
-		if (NumberVariations[number - 1] != 0)
+
+		if (number == 0)
 		{
-			reload = FindAndMakePossibleMoves(amount_moves, NumberVariations, play, place);
+			check = play.MakeMoveCleverGamer(amount_moves, NumberVariations, place);
+			return(1);
 		}
 		else
 		{
-		NumberVariations[number - 1] = 1;
-		switch (number)
-		{
-		case 1:
-			play.DrawCross(place, 12, 4);
-			return(1);
-		case 2:
-			play.DrawCross(place, 35, 4);
-			return(1);
-		case 3:
-			play.DrawCross(place, 58, 4);
-			return(1);
-		case 4:
-			play.DrawCross(place, 12, 12);
-			return(1);
-		case 5:
-			play.DrawCross(place, 35, 12);
-			return(1);
-		case 6:
-			play.DrawCross(place, 58, 12);
-			return(1);
-		case 7:
-			play.DrawCross(place, 12, 20);
-			return(1);
-		case 8:
-			play.DrawCross(place, 35, 20);
-			return(1);
-		case 9:
-			play.DrawCross(place, 58, 20);
-			return(1);
 
-		default:
-			return(0);
+			if (NumberVariations[number - 1] != 0)
+			{
+				reload = FindAndMakePossibleMoves(amount_moves, NumberVariations, play, place);
+			}
+			else
+			{
+				NumberVariations[number - 1] = 2;
+				switch (number)
+				{
+				case 1:
+					play.DrawCircle(place, 12, 4);
+					return(1);
+				case 2:
+					play.DrawCircle(place, 35, 4);
+					return(1);
+				case 3:
+					play.DrawCircle(place, 58, 4);
+					return(1);
+				case 4:
+					play.DrawCircle(place, 12, 12);
+					return(1);
+				case 5:
+					play.DrawCircle(place, 35, 12);
+					return(1);
+				case 6:
+					play.DrawCircle(place, 58, 12);
+					return(1);
+				case 7:
+					play.DrawCircle(place, 12, 20);
+					return(1);
+				case 8:
+					play.DrawCircle(place, 35, 20);
+					return(1);
+				case 9:
+					play.DrawCircle(place, 58, 20);
+					return(1);
+
+				default:
+					return(0);
+				}
+			}
 		}
+	}
+	if ((amount_moves != 0) && (amount_moves % 2 == 0))
+	{
+		cout << "Куда поставить крест: " << endl;
+		cout << "0.Программа сама сделает ход" << endl;
+		if (NumberVariations[0] == 0)
+		{
+			cout << "1.Левый верхний угол " << endl;
+		}
+		if (NumberVariations[1] == 0)
+		{
+			cout << "2.Центральный верхний квадрат " << endl;
+		}
+		if (NumberVariations[2] == 0)
+		{
+			cout << "3.Правый верхний угол " << endl;
+		}
+		if (NumberVariations[3] == 0)
+		{
+			cout << "4.Левый центральный квадрат " << endl;
+		}
+		if (NumberVariations[4] == 0)
+		{
+			cout << "5.Центральный квадрат " << endl;
+		}
+		if (NumberVariations[5] == 0)
+		{
+			cout << "6.Правый центральный квадрат " << endl;
+		}
+		if (NumberVariations[6] == 0)
+		{
+			cout << "7.Левый нижний угол " << endl;
+		}
+		if (NumberVariations[7] == 0)
+		{
+			cout << "8.Центральный нижний квадрат " << endl;
+		}
+		if (NumberVariations[8] == 0)
+		{
+			cout << "9.Правый нижний угол " << endl;
+		}
+		cin >> number;
+
+		if (number == 0)
+		{
+			check = play.MakeMoveCleverGamer(amount_moves, NumberVariations, place);
+			return(1);
+		}
+		else
+		{
+			if (NumberVariations[number - 1] != 0)
+			{
+				reload = FindAndMakePossibleMoves(amount_moves, NumberVariations, play, place);
+			}
+			else
+			{
+				NumberVariations[number - 1] = 1;
+				switch (number)
+				{
+				case 1:
+					play.DrawCross(place, 12, 4);
+					return(1);
+				case 2:
+					play.DrawCross(place, 35, 4);
+					return(1);
+				case 3:
+					play.DrawCross(place, 58, 4);
+					return(1);
+				case 4:
+					play.DrawCross(place, 12, 12);
+					return(1);
+				case 5:
+					play.DrawCross(place, 35, 12);
+					return(1);
+				case 6:
+					play.DrawCross(place, 58, 12);
+					return(1);
+				case 7:
+					play.DrawCross(place, 12, 20);
+					return(1);
+				case 8:
+					play.DrawCross(place, 35, 20);
+					return(1);
+				case 9:
+					play.DrawCross(place, 58, 20);
+					return(1);
+
+				default:
+					return(0);
+				}
+			}
 		}
 	}
 }
@@ -304,11 +336,14 @@ void PressStart(string var2, Game play, string name1, string name2)
 	{
 		size_t checker = 0;
 		play.checkermoves = 0;
+		int check = 0;
 		StartGame(name1, name2);
 		DrawPlayField(play.place);
 		for (play.amount_moves = 0; play.amount_moves < NUMBER_OF_FIELDS; play.amount_moves++)
 		{
-			play.checkermoves = FindAndMakePossibleMoves(play.amount_moves, play.NumberVariations, play, play.place);
+			//play.checkermoves = FindAndMakePossibleMoves(play.amount_moves, play.NumberVariations, play, play.place);
+			check = FindAndMakePossibleMoves(play.amount_moves, play.NumberVariations, play, play.place);
+
 			DrawPlayField(play.place);
 			checker = play.WinCheck(play.NumberVariations);
 			if (checker == 1)
@@ -342,7 +377,7 @@ void PressStart(string var2, Game play, string name1, string name2)
 			StartGame(name1, name2);
 			while (play.amount_moves != 9)
 			{
-				checker2 = play.MakeMoveCleverGamer(play.amount_moves, play.NumberVariations);
+				checker2 = play.MakeMoveCleverGamer(play.amount_moves, play.NumberVariations, play.place);
 				DrawPlayField(play.place);
 				checker = play.WinCheck(play.NumberVariations);
 				if (checker == 1)
@@ -409,7 +444,7 @@ void PressStart(string var2, Game play, string name1, string name2)
 				{
 					break;
 				}
-				checker2 = play.MakeMoveCleverGamer(play.amount_moves, play.NumberVariations);
+				checker2 = play.MakeMoveCleverGamer(play.amount_moves, play.NumberVariations, play.place);
 				DrawPlayField(play.place);
 				checker = play.WinCheck(play.NumberVariations);
 				if (checker == 1)
