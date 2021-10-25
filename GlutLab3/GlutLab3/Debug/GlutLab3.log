@@ -1,0 +1,6 @@
+﻿  main.cpp
+c:\users\rkusu\github\dev\workingplace\glutlab3\glutlab3\main.cpp(15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\rkusu\github\dev\workingplace\glutlab3\glutlab3\main.cpp(27): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\rkusu\github\dev\workingplace\glutlab3\glutlab3\main.cpp(33): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\rkusu\github\dev\workingplace\glutlab3\glutlab3\main.cpp(36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  GlutLab3.vcxproj -> C:\Users\rkusu\GitHub\Dev\WorkingPlace\GlutLab3\Debug\GlutLab3.exe
