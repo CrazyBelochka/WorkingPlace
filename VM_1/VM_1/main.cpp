@@ -1,6 +1,8 @@
 #include<iostream>
 #include <iomanip>
 #include<cmath>
+
+
 using namespace std;
 double f(double x) //функция
 {
@@ -42,19 +44,19 @@ int metodNewton()
 }
 int metodIT()
 {
-	double x, s;
+	double x, s, xn;
 	int i = 0;
 	double eps;
-	eps = 0.000001;
+	eps = 0.00001;
 	cout << "Enter initial root value : "; cin >> x;
 	s = x;
 		do
 		{
+				xn = x;
 				x = equivalent(x);
-				s = fabs(f(x));
 				cout << ++i << "-th iteration = " << x << "\n";
 		}
-		while (fabs(f(x) < eps));
+		while (fabs(xn - x) > eps);
 		i = 0;
 	return 0;
 }
@@ -64,7 +66,7 @@ int methodSEC()
 	int i = 0;
 	cout << "Please input [a;b]\n";
 	cin >> a >> b;
-	eps = 0.001;
+	eps = 0.0001;
 	if (f(a) * dfdf(a) > 0)
 		x0 = a; // для выбора начальной точки проверяем f(x0)*dfdf(x0) > 0 ?
 	else

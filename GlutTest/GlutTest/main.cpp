@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <iostream>
 
-float objSize = 15; //размер квадрата
+float objSize = 5; //размер квадрата
 float objX = objSize; //координаты квадрата
 float objY = 600 - objSize; //координаты квадрата
 
