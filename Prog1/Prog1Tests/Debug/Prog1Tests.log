@@ -1,5 +1,8 @@
-﻿  Prog1Tests.cpp
-C:\Users\Роман\source\repos\Prog3sem\Prog1\Prog1\game.h(102,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Роман\source\repos\Prog3sem\Prog1\Prog1\game.h(490,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Роман\source\repos\Prog3sem\Prog1\Prog1\game.h(830,16): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  Prog1Tests.vcxproj -> C:\Users\Роман\source\repos\Prog3sem\Prog1\Debug\Prog1Tests.dll
+﻿  pch.cpp
+  Prog1Tests.cpp
+C:\Users\Роман\GitHub\WorkingPlace\Prog1\Prog1\game.h(96,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Роман\GitHub\WorkingPlace\Prog1\Prog1\game.h(492,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Роман\GitHub\WorkingPlace\Prog1\Prog1\game.h(845,16): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Роман\GitHub\WorkingPlace\Prog1\Prog1\game.h(110): warning C4715: Game::FindPossibleRandMoves: значение возвращается не при всех путях выполнения
+     Создается библиотека C:\Users\Роман\GitHub\WorkingPlace\Prog1\Debug\Prog1Tests.lib и объект C:\Users\Роман\GitHub\WorkingPlace\Prog1\Debug\Prog1Tests.exp
+  Prog1Tests.vcxproj -> C:\Users\Роман\GitHub\WorkingPlace\Prog1\Debug\Prog1Tests.dll

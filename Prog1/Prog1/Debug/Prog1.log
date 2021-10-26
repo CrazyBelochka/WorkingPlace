@@ -1,11 +1,12 @@
 ﻿  InterFace.cpp
-C:\Users\Роман\source\repos\Prog3sem\Prog1\Prog1\game.h(96,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Роман\source\repos\Prog3sem\Prog1\Prog1\game.h(484,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Роман\source\repos\Prog3sem\Prog1\Prog1\game.h(824,16): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Роман\GitHub\WorkingPlace\Prog1\Prog1\game.h(96,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Роман\GitHub\WorkingPlace\Prog1\Prog1\game.h(492,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Роман\GitHub\WorkingPlace\Prog1\Prog1\game.h(845,16): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   main.cpp
-C:\Users\Роман\source\repos\Prog3sem\Prog1\Prog1\game.h(96,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Роман\source\repos\Prog3sem\Prog1\Prog1\game.h(484,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Роман\source\repos\Prog3sem\Prog1\Prog1\game.h(824,16): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Роман\GitHub\WorkingPlace\Prog1\Prog1\game.h(96,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Роман\GitHub\WorkingPlace\Prog1\Prog1\game.h(492,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Роман\GitHub\WorkingPlace\Prog1\Prog1\game.h(845,16): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   Создание кода...
-C:\Users\Роман\source\repos\Prog3sem\Prog1\Prog1\InterFace.cpp(331): warning C4715: FindAndMakePossibleMoves: значение возвращается не при всех путях выполнения
-  Prog1.vcxproj -> C:\Users\Роман\source\repos\Prog3sem\Prog1\Debug\Prog1.exe
+C:\Users\Роман\GitHub\WorkingPlace\Prog1\Prog1\InterFace.cpp(331): warning C4715: FindAndMakePossibleMoves: значение возвращается не при всех путях выполнения
+C:\Users\Роман\GitHub\WorkingPlace\Prog1\Prog1\game.h(110): warning C4715: Game::FindPossibleRandMoves: значение возвращается не при всех путях выполнения
+  Prog1.vcxproj -> C:\Users\Роман\GitHub\WorkingPlace\Prog1\Debug\Prog1.exe

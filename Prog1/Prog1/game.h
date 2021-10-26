@@ -10,7 +10,6 @@ const unsigned int HEIGHT_PLAYFIELD = 24;
 const unsigned int ARRAY_LENGTH = 73;
 const unsigned int ARRAY_HEIGHT = 25;
 const unsigned int NUMBER_OF_FIELDS = 9;
-const unsigned int TEST_INPUT = 160;
 using namespace std;
 
 class Game
@@ -91,7 +90,7 @@ public:
 	int FindPossibleRandMoves(int NumberVariations[NUMBER_OF_FIELDS])
 	{
 		int move = 0;
-		for (;;)
+		for (size_t i = 0; i < 3; i++)
 		{
 			srand(time(0));
 			move = rand() % 9;
@@ -100,6 +99,13 @@ public:
 				return(move);
 			}
 		}
+		for (size_t i = 0; i < NUMBER_OF_FIELDS-1; i++)
+			{
+				if (NumberVariations[i] == 0)
+				{
+					return(i);
+				}
+			}
 	}
 
 	void MakePossibleRandMoves(int amount_moves, int NumberVariations[NUMBER_OF_FIELDS], int move)
@@ -479,13 +485,26 @@ public:
 				return(1);
 			}
 			int move = 0;
-			for (;;)
+			size_t k = 0;
+			for (size_t i = 0; i < 3; i++)
 			{
 				srand(time(0));
 				move = rand() % 9;
 				if (NumberVariations[move] == 0)
 				{
+					k = 1;
 					break;
+				}
+			}
+			if (k == 0)
+			{
+				for (size_t i = 0; i < NUMBER_OF_FIELDS; i++)
+				{
+					if (NumberVariations[i] == 0)
+					{
+						move = i;
+						break;
+					}
 				}
 			}
 			if (NumberVariations[move] == 0)
@@ -819,13 +838,26 @@ public:
 					return(2);
 				}	
 				int move = 0;
-				for (;;)
+				size_t k = 0;
+				for (size_t i = 0; i < 3; i++)
 				{
 					srand(time(0));
 					move = rand() % 9;
 					if (NumberVariations[move] == 0)
 					{
+						k = 1;
 						break;
+					}
+				}
+				if (k == 0)
+				{
+					for (size_t i = 0; i < NUMBER_OF_FIELDS; i++)
+					{
+						if (NumberVariations[i] == 0)
+						{
+							move = i;
+							break;
+						}
 					}
 				}
 				if (NumberVariations[move] == 0)
@@ -877,7 +909,6 @@ public:
 	int number;
 	int checkermoves = 0;
 
-private:
 };
 
 class CleverGamer : public Game

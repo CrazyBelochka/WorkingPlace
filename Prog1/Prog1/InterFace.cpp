@@ -341,7 +341,6 @@ void PressStart(string var2, Game play, string name1, string name2)
 		DrawPlayField(play.place);
 		for (play.amount_moves = 0; play.amount_moves < NUMBER_OF_FIELDS; play.amount_moves++)
 		{
-			//play.checkermoves = FindAndMakePossibleMoves(play.amount_moves, play.NumberVariations, play, play.place);
 			check = FindAndMakePossibleMoves(play.amount_moves, play.NumberVariations, play, play.place);
 
 			DrawPlayField(play.place);
